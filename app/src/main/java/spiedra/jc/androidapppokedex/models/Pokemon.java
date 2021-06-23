@@ -5,32 +5,28 @@ import com.google.gson.annotations.SerializedName;
 
 public class Pokemon {
     @Expose
-    @SerializedName("id")
-    private int id;
-    @Expose
     @SerializedName("name")
-    private String name;
+    private final String name;
     @Expose
     @SerializedName("url")
-    private String url;
+    private final String url;
     @Expose
     @SerializedName("height")
-    private int height;
+    private final int height;
     @Expose
     @SerializedName("weight")
-    private int weight;
-    
+    private final int weight;
+
+    public Pokemon(String name, String url, int height, int weight) {
+        this.name = name;
+        this.url = url;
+        this.height = height;
+        this.weight = weight;
+    }
+
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getId() {
@@ -38,27 +34,12 @@ public class Pokemon {
         return Integer.parseInt(splitUrl[splitUrl.length - 1]);
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public int getHeight() {
         return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 
     public int getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
 }

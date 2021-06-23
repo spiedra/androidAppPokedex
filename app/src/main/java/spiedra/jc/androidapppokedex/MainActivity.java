@@ -1,5 +1,6 @@
 package spiedra.jc.androidapppokedex;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void makeCall() {
         PokeApiService pokeApiService = retrofitAdapter.getInstanceRetrofit().create(PokeApiService.class);
-        Call<PokeApiResponse> call = pokeApiService.getPokemonList(100, 0);
+        Call<PokeApiResponse> call = pokeApiService.getPokemonList(125, 0);
 
         call.enqueue(new Callback<PokeApiResponse>() {
             @Override
-            public void onResponse(Call<PokeApiResponse> call, Response<PokeApiResponse> response) {
+            public void onResponse(@NonNull Call<PokeApiResponse> call, @NonNull Response<PokeApiResponse> response) {
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     pokeListAdapter.appendDataToPokeList(response.body().getResults());
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call call, Throwable t) {
+            public void onFailure(@NonNull Call call, @NonNull Throwable t) {
                 Log.d("Error", t.toString());
             }
         });

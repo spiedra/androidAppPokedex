@@ -1,11 +1,13 @@
 package spiedra.jc.androidapppokedex;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
@@ -15,7 +17,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import spiedra.jc.androidapppokedex.adapters.RetrofitAdapter;
-import spiedra.jc.androidapppokedex.models.PokeApiResponse;
 import spiedra.jc.androidapppokedex.models.Pokemon;
 import spiedra.jc.androidapppokedex.service.PokeApiService;
 
@@ -48,14 +49,14 @@ public class PokeInfoActivity extends AppCompatActivity {
         Call<Pokemon> call = pokeApiService.getPokemonInfo(id);
 
         call.enqueue(new Callback<Pokemon>() {
+            @SuppressLint("SetTextI18n")
             @Override
-            public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
+            public void onResponse(@NonNull Call<Pokemon> call, @NonNull Response<Pokemon> response) {
                 if (response.isSuccessful()) {
                     assert response.body() != null;
-//                    Pokemon pokemon = response.body();
                     txPokeName.setText(response.body().getName());
-//                    tvPokeHeight.setText(response.body().getHeight());
-//                    tvPokeWeight.setText(response.body().getWeight());
+                    tvPokeHeight.setText("Height: " + response.body().getHeight());
+                    tvPokeWeight.setText("Weight: " + response.body().getWeight() + " lbs");
                     displayPokeImageInfo(id);
                 } else {
                     Log.d("Error", "Something happened");
@@ -63,7 +64,7 @@ public class PokeInfoActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call call, Throwable t) {
+            public void onFailure(@NonNull Call call, @NonNull Throwable t) {
                 Log.d("Error", t.toString());
             }
         });

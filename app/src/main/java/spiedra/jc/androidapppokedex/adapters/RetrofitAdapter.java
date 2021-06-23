@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitAdapter {
     private static RetrofitAdapter instance = null;
-    private Retrofit retrofit;
+    private final Retrofit retrofit;
     private static final String BASE_URL = "https://pokeapi.co/api/v2/";
 
     private RetrofitAdapter() {
