@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">androidAppPokedex</string>
+    <string name="main_tittle">Pokemon List</string>
+    <string name="pokemon_image_desc">Pokemon image</string>
+    <string name="pokemon_name">Pokemon name</string>
+    <string name="pokemon_height">Height: 1</string>
+    <string name="pokemon_weight">Weight: 6.5</string>
+    <string name="pokemon_category">Category: Fire</string>
+</resources>
