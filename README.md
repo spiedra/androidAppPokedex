@@ -3,6 +3,8 @@
 - Basic use the Retrofit 2.0
 - Java - Android studio
 
-[img1]: https://raw.githubusercontent.com/spiedra/androidAppPokedex/master/assets/mainActivity.jpg?token=ATBAUW5JTPCGEYQGCFVZXADA3S6Z4 "MainActivity"
+## Screenshots
 
-[img2]: https://raw.githubusercontent.com/spiedra/androidAppPokedex/master/assets/PokeInfoActivity.jpg?token=ATBAUW42JOPGBE772PL7DTDA3S63W "PokeInfoActivity"
+![mainActivity](https://user-images.githubusercontent.com/79825499/123153209-a8267000-d422-11eb-90e3-be09c484a064.jpg) 
+
+![PokeInfoActivity](https://user-images.githubusercontent.com/79825499/123153535-005d7200-d423-11eb-84ac-eab95f970155.jpg)
