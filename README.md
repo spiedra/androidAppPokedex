@@ -1,7 +1,6 @@
 # Android app Pokedex 
 
-- Basic use the Retrofit 2.0
-- Java - Android studio
+Java application for Android
 
 ## Tech Stack
 
